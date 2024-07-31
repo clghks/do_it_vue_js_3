@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>Composition 기초</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <button v-on:click="clickBtn">클릭</button>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Hi',
+          };
+        },
+        methods: {
+          clickBtn: function () {
+            this.message = 'Hello';
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

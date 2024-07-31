@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>v-on 디렉티브 이용해 이벤트 처리하기</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <button v-on:click="clickBtn(10)">클릭</button>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        methods: {
+          clickBtn: function (num) {
+            alert('Clicked: ' + num);
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

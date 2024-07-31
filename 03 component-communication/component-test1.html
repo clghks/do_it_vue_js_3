@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Vue Component Registration</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h3>{{ message }}</h3>
+        </header>
+
+        <!-- 컴포넌트 등록을 위한 'todo-footer' 태그 추가 -->
+        <todo-footer></todo-footer>
+
+        <!-- 컴포넌트 등록을 위한 'todo-list' 태그 추가 -->
+        <todo-list></todo-list>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        // 'todo-footer' 컴포넌트 등록
+        // <p>todo-footer</p>를 template으로 갖는 컴포넌트을 등록해 봅시다.
+
+        // 'todo-list' 컴포넌트 등록 
+        // <p>todo-list</p>를 template으로 갖는 컴포넌트을 등록해 봅시다.
+        const footer = {
+            template: '<p>todo-footer</p>'
+        }
+
+        const list = {
+            template: '<p>todo-list</p>'
+        }
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "This is a component"
+            },
+            components: {
+                "todo-footer": footer,
+                "todo-list": list
+            }
+        })
+    </script>
+</body>
+
+</html>

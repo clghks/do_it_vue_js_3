@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>Ref</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      const { ref } = Vue;
+      Vue.createApp({
+        setup() {
+          const message = ref('');
+          return { message };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

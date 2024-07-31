@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>자바스크립트 표현식 주의할 점</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>{{ var a = 10; }}</p>
+      <p>{{ if (true) { return 100} }}</p>
+      <p>{{ true ? 100 : 0 }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp().mount('#app');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>자바스크립트 표현식</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <p>{{ message + "!!!" }}</p>
+      <p>{{ message.split('').reverse().join('') }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Hello World',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

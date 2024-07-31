@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>{{ }} 문법 사용</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Vue.js',
+          };
+        },
+        template: '<p>Hello {{ message }}</p>',
+      }).mount('#app');
+    </script>
+  </body>
+</html>

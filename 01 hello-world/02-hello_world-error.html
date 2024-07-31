@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Hello World</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    {{ message }}
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Hello Vue!',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

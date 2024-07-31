@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>v-bind 속성 사용</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <div>
+        <p>Hello {{ message }}</p>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Vue.js',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

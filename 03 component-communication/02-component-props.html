@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>상위에서 하위 컴포넌트로 데이터 전달하기</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <child-component v-bind:propsdata="message"></child-component>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      const component = {
+        props: ['propsdata'],
+        template: '<p>{{ propsdata }}</p>',
+      };
+
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: 'Parent Component',
+          };
+        },
+        components: {
+          'child-component': component,
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

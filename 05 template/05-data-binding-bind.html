@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>v-bind 속성 사용</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <p :id="idA">아이디 바인딩</p>
+      <p :class="classA">클래스 바인딩</p>
+      <p :style="styleA">스타일 바인딩</p>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            idA: '10',
+            classA: 'container',
+            styleA: 'color: blue',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

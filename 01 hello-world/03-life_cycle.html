@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>LifeCycle</title>
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+            },
+            mounted() {
+                console.log("mounted", this.message)
+                this.message = "Hello World!"
+            },
+            beforeCreate() {
+                console.log("beforeCreate", this.message)
+            },
+            created() {
+                console.log("created", this.message)
+            },
+            updated() {
+                console.log("updated", this.message)
+            }
+        }).mount('#app') 
+    </script>
+</body>
+
+</html>

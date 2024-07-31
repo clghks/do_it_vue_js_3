@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue Axios 실습</title>
+  </head>
+  <body>
+    <div id="app">
+      <button v-on:click="fetchData">프레임워크 목록 가져오기</button>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      Vue.createApp({
+        methods: {
+          fetchData: function () {
+            axios
+              .get(
+                'https://raw.githubusercontent.com/joshua1988/doit-vuejs/master/data/demo.json'
+              )
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

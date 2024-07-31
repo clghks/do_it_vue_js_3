@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>computed 속성과 method 속성의 차이점</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>{{ message }}</p>
+      <button v-on:click="reversedMessage">문자열 역순</button>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Hello World',
+          };
+        },
+        methods: {
+          reversedMessage: function () {
+            this.message = this.message.split('').reverse().join('');
+            return this.message;
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

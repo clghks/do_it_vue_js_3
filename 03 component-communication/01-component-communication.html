@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>컴포넌트 유효 범위</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <my-component1></my-component1>
+      <my-component2></my-component2>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      const component1 = {
+        template: '<div>첫 번째 지역 컴포넌트 : {{ component1Data }}</div>',
+        data() {
+          return {
+            component1Data: 100,
+          };
+        },
+      };
+
+      const component2 = {
+        template: '<div>두 번째 지역 컴포넌트 : {{ component2Data }}</div>',
+        data() {
+          return {
+            component2Data: component1.data.component1Data,
+          };
+        },
+      };
+
+      const app = Vue.createApp({
+        components: {
+          'my-component1': component1,
+          'my-component2': component2,
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

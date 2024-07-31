@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <title>디렉티브 다루기</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <a v-if="flag">두잇 Vue.js</a>
+      <ul>
+        <li v-for="system in systems">{{ system }}</li>
+      </ul>
+      <p v-show="flag">두잇 Vue.js</p>
+      <h5 v-bind:id="uid">뷰 입문서</h5>
+      <button v-on:click="popupAlert">경고 창 버튼</button>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            flag: false,
+            systems: ['Android', 'iOS', 'Windows'],
+            uid: 10,
+          };
+        },
+        methods: {
+          popupAlert: function () {
+            alert('경고 창 표시');
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

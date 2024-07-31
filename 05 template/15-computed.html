@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>computed 속성과 method 속성의 차이점</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <p>{{ reversedMessage() }}</p>
+      <p>{{ reversedMessage() }}</p>
+      <p>{{ reversedMessage() }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Hello World',
+          };
+        },
+        methods: {
+          reversedMessage: function () {
+            console.log('reversedMessage');
+            return this.message.split('').reverse().join('');
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

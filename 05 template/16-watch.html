@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>watch 속성 사용</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <input v-model="message" />
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Hello World',
+          };
+        },
+        watch: {
+          message: function (data) {
+            console.log('message의 값이 바뀝니다. : ', data);
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

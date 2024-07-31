@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>라이프사이클 훅</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      const { onMounted, onUnmounted } = Vue;
+      Vue.createApp({
+        setup() {
+          onMounted(() => {
+            console.log('컴포넌트가 마운트되었습니다.');
+          });
+
+          onUnmounted(() => {
+            console.log('컴포넌트가 언마운트되었습니다.');
+          });
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
