@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Computed API</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <div>{{ reversedMessage }}</div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      Vue.createApp({
+        data() {
+          return {
+            message: 'Hello',
+          };
+        },
+        computed: {
+          reversedMessage() {
+            return this.message.split('').reverse().join('');
+          },
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>Watch API</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <input v-model="message" />
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      const { ref, watch } = Vue;
+      Vue.createApp({
+        setup() {
+          const message = ref('eee');
+
+          watch(message, (newValue, oldValue) => {
+            console.log(newValue);
+          });
+
+          return { message };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
