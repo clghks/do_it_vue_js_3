@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>네임드 뷰 실습</title>
+  </head>
+  <body>
+    <div id="app">
+      <router-view name="header"></router-view>
+      <router-view></router-view>
+      <router-view name="footer"></router-view>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <script>
+      var Body = { template: '<div>This is Body</div>' };
+      var Header = { template: '<div>This is Header</div>' };
+      var Footer = { template: '<div>This is Footer</div>' };
+
+      // LoginHeader, LoginBody, LoginFooter 컴포넌트 내용을 정의해 보세요.
+      var router = VueRouter.createRouter({
+        history: VueRouter.createWebHashHistory(),
+        routes: [
+          {
+            path: '/',
+            components: {
+              default: Body,
+              header: Header,
+              footer: Footer,
+            },
+          },
+          // "/login" URL을 추가하고, LoginHeader, LoginBody, LoginFooter 컴포넌트를 추가해 보세요
+        ],
+      });
+
+      var app = Vue.createApp();
+      app.use(router).mount('#app');
+    </script>
+  </body>
+</html>

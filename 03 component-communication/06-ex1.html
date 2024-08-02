@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Vue Component Registration</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <header>
+        <h3>{{ message }}</h3>
+      </header>
+
+      <!-- 컴포넌트 등록을 위한 'todo-footer' 태그 추가 -->
+
+      <!-- 컴포넌트 등록을 위한 'todo-list' 태그 추가 -->
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+      // 'todo-footer' 컴포넌트 등록
+      // <p>todo-footer</p>를 template으로 갖는 컴포넌트을 등록해 봅시다.
+
+      // 'todo-list' 컴포넌트 등록
+      // <p>todo-list</p>를 template으로 갖는 컴포넌트을 등록해 봅시다.
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: 'This is a component',
+          };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
